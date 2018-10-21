@@ -1,0 +1,59 @@
+COLLECTION FRAMEWORK IMPROVEMENTS:
+1. forEach can be used in one line itself
+2. Collections can be converted to stream for many more functions
+3. Navigable Set
+
+CoVariance:
+For example:
+  filter(Predicate<? super Double> predicate)
+then this means the predicate can take in int, float or double i.e. any type whose super is Double
+
+
+
+INTERFACES:
+
+1. supports multiple inheritances
+2. defines a contract for other class
+3. Abstraction
+
+can have concrete methods of static and default types
+IN JAVA 8:
+- interfaces can have concrete methods as well
+
+______________________________________________________________________________________________________________________
+
+
+Abstract class:
+  abstract + concrete (methods with definition) methods
+
+
+
+ --------------------------------  COMPARABLE INTERFACE DEMO  ----------------------------------
+*
+* Java Comparable interface is used to order the objects of user-defined class.
+* This interface is found in java.lang package and contains only one method named compareTo(Object)
+*
+* Comparable interface is mainly used to sort the arrays (or lists) of custom classes (i.e. user-defined Class.
+* Integer,String class implements Comparable
+*
+*
+* So in this example, Location is a class that implements Comparable
+*
+* -------------------------------------------------------------------------------------------------*/
+
+
+
+
+ ------------------     NavigableSet    --------------------------
+ *
+ * The java.util.NavigableSet interface is a subtype of the java.util.SortedSet interface.
+ *
+ * It behaves like a SortedSet with the exception you have navigation methods available,
+ * in addition to the sorting mechanisms of the SortedSet.
+ *
+
+ For example:
+ System.out.println(departments.headSet("R"));
+       // The headSet() method returns a view of the original NavigableSet which only contains elements that are "less than" the given element
+
+ */

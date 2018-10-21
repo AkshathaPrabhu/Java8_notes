@@ -1,0 +1,34 @@
+STREAMS:
+1. Terminal operations (o/p is displayed to the terminal/console)
+2. Intermediate operations (o/p still needs to be worked upon. i.e. stream is not yet consumed completely)
+
+Suppose I am working on i/p as stream and then use a function on it, then:
+if return type of function is still stream means it's intermediate operation
+if return type is some other datatype(like long, void, double) then it's terminal operation
+
+
+
+creation -> of,builder,generate
+collection -> list,set,map
+arrays ->
+funtional interfaces
+    -> which return Streams (are called INTERMEDIATE)
+        -> limit
+        -> distinct
+        -> sorted
+        -> filter
+        -> map, flatMap
+        -> reduce
+
+    -> which return Results (are called TERMINAL type)
+        -> count
+        -> forEach
+        -> collect
+        -> max,min,sum
+        -> findFirst, findAny, allMatch,
+peek()
+parallelStream()
+
+LAZY EVALUATION:
+if there is no terminal operator in the end of a stream, then all intermediate operators don't get executed unless a terminal is in the end.
+This is known as Lazy evaluation.

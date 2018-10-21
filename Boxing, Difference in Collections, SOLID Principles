@@ -1,0 +1,64 @@
+In java there are two main things:
+1. Beans (POJO)
+2. functionality --> (now it becomes functional programming along with oops)
+
+Two ways to set values for a class' variables are:
+1. setters
+2. constructors
+(this is because of encapsulation, we should never be able to access the class members since
+they have to be wrapped hence we should use only functions/methods to access them)
+
+______________________________________________________________________________________________________________________
+
+Compile time type safety:
+Stream<Integer> marks = Stream.<Integer>builder().add(67).add(23).add(10).build();
+Stream marksSame = Stream.builder().add(67).add(23).add(10).add(true).add("hey").build();
+
+List names = new ArrayList()<>
+names.add("hey");
+names.add(123);
+
+List<Integer> names = new ArrayList()<>
+names.add("hey");  //compile time error
+names.add(123);
+
+
+______________________________________________________________________________________________________________________
+
+UNBoxing : Converting Wrapper class to primitive type
+      int z = Y;
+
+      where Integer Y =100;  //Integer Y = new Integer("100");
+
+Auto-boxing:    Converting primitive datatype to Wrapper class
+
+______________________________________________________________________________________________________________________
+COLLECTIONS:
+
+ list                                    Set                                          Map
+ value                                  value                                       key,value
+ allows duplicates            doesn't allow duplicates(only unique values)
+                              HashSet ->  values aren't in order
+                              TreeSet -> return set in ascending order
+
+
+______________________________________________________________________________________________________________________
+
+JDK (comes with)--> JRE (comes with)---> JVM     {new machine has only JRE with JVM}
+
+______________________________________________________________________________________________________________________
+
+
+
+SOLID PRINCIPLES:
+
+S - Single Responsibility: Every class file should have do only it's work, for new functionality use other class
+O - open for extension closed for modification (Suppose we release a newer version, then modifications shouldn't be allowed)
+L - Liskov substitution principle (For month we use Int( = 4 bytes), but it's better to use byte (8 bits) since it would reserve lesser memory)
+I - Interface segregation Principle ( For example for annual review, we can only read manager's review not write into it. For this it's advisable to have separate interfaces for ReadInterface and WriteInterfaces so that there's no unnecessary method overriding if they were one. Plus in java anyway we can implement multiple interfaces.)
+D - Dependency Injection
+
+
+
+
+https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html

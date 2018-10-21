@@ -1,0 +1,74 @@
+FUNCTIONAL INTERFACES (SAM Interfaces):
+- Single Abstract Method
+- can have n num of default or static methods but only 1 abstract
+- @FunctionalInterface (Optional annotation; if not mentioned compiler may take it as normal interface)
+- candidates for lambda expression
+
+
+Anonymous Class:
+- Only for abstract classes and interfaces wherein you can override a function
+- It is a class called inside another class' function with definition of the abstract function
+
+______________________________________________________________________________________________________________________
+
+LAMBDA EXPRESSION:
+  (<params>) -> {body};
+
+- if only 1 params, then () is optional
+- if only 1 statement in body, then {} is optional
+- Even for params, mentioning then datatype is optional
+
+So,
+ Classname referenceName = param -> body;
+ referenceName.SAM(<paramValue>);
+
+is equivalent to:
+ Classname referenceName = (Datatype param) -> {body};
+ referenceName.SAM(<paramValue>);
+
+
+______________________________________________________________________________________________________________________
+
+INBUILT FUNCTIONAL INTERFACES:
+
+Java 8 allows us to use inbuilt functions that are defined in Core Functional interfaces provided by the library: java.util.functions
+
+1. Function (Takes one parameter -> returns single value)
+        Example:
+          Function<inputType, returnType> functionName = param -> body;
+          functionName.apply(<inputValue>)
+
+
+2. Consumer (Takes one parameter -> no return)
+3. Supplier (No parameter -> returns single value)
+4. Predicate (Takes one parameter -> returns boolean)
+
+5. UnaryOperator
+    One input param -> one output of same datatype
+6. BiFunction (2 input params can be of different type -> one return o/p)
+7. BinaryOperator ( 2 input params of same datatype -> one return o/p of same datatype)
+
+
+/*  -------------  Basic Functional Interfaces   ------------------
+*
+* Function
+* Consumer
+* Supplier
+* Predicate
+*
+*
+* */
+
+
+
+______________________________________________________________________________________________________________________
+
+METHOD REFERENCE:
+
+Example:
+    Supplier<LocalTime> timeNow = LocalTime::now;
+is equivalent to :
+    Supplier<LocalTime> timeNow = () -> LocalTime.now();
+
+- only static methods can be used for Method referencing
+- we can actually do with non-static functions also but then we need to create an object to use that method (and this isn't advisable)
